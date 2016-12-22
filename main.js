@@ -243,7 +243,14 @@ function calcStats() {
         'Nenad Tocilovac (nenadtocilovac)',
         'Rados Milacic (radosmilacic)',
         'Vladeta Putnikovic (vputnikovic)',
-        'Predrag Rogic (prezha)'
+        'Predrag Rogic (prezha)',
+        'Nevena Tomovic (nevenatomovic)',
+        'Nikola Mitrovic (mitrovicnikola)',
+        'Robert Jakupak (robertjakupak)',
+        'Milos Milosevic (milosevic_milos)',
+        'Maja Dimitrovska (majadimitrovska)',
+        'Petar Atanasovski (petaratanasovski)',
+        'Vladimir Ranđelović (vladimirrandelovic)'
     ];
 
     $('.js-list.list-wrapper').each(function () {
