@@ -250,7 +250,8 @@ function calcStats() {
         'Milos Milosevic (milosevic_milos)',
         'Maja Dimitrovska (majadimitrovska)',
         'Petar Atanasovski (petaratanasovski)',
-        'Vladimir Ranđelović (vladimirrandelovic)'
+        'Vladimir Ranđelović (vladimirrandelovic)',
+        'mwpsupport (mwpsupport)'
     ];
 
     $('.js-list.list-wrapper').each(function () {
@@ -266,19 +267,23 @@ function calcStats() {
         var count = 0;
         $(this).find('.badge-text').each(function () {
             var text = $(this).text();
-            if (text.substr(0, 3) !== 'SP ') {
+            var spRegExp = /SP:?\s*(\d+(\.\d+)?)/ig;
+            var spResult = spRegExp.exec(text);
+            if (!spResult) {
                 return;
             }
-            var cardValue = parseFloat(text.substring(3, text.length));
+            var cardValue = parseFloat(spResult[1]);
             var actualCardValue = cardValue;
 
             $(this).parents().eq(2).find('.badge-text').each(function () {
                 var text = $(this).text();
-                if (text.substr(0, 3) !== 'AP ') {
+                var apRegExp = /AP:?\s*(\d+(\.\d+)?)/ig;
+                var apResult = apRegExp.exec(text);
+                if (!apResult) {
                     return;
                 }
 
-                actualCardValue = parseFloat(text.substring(3, text.length));
+                actualCardValue = parseFloat(apResult[1]);
             });
 
             var process = function () {
